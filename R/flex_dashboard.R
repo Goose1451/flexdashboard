@@ -354,7 +354,6 @@ flex_dashboard <- function(fig_width = 6.0,
     # dashboard init script
     dashboardInitScript <- c(
        '<script type="text/javascript">',
-       '$(document).ready(function () {',
        '  FlexDashboard.init({',
        paste0('    theme: "', theme, '",'),
        paste0('    fillPage: ', ifelse(fill_page,'true','false'), ','),
@@ -366,7 +365,6 @@ flex_dashboard <- function(fig_width = 6.0,
        paste0('    defaultFigHeightMobile: ', figSizePixels(fig_mobile[[2]]), ','),
        paste0('    resize_reload: ', ifelse(resize_reload,'true','false')),
        '  });',
-       '});',
        '</script>'
     )
     dashboardInitScriptFile <- tempfile(fileext = ".html")
@@ -615,5 +613,3 @@ storyboard_dependencies <- function(source = NULL) {
   else
     NULL
 }
-
-
